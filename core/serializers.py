@@ -391,24 +391,24 @@ class UserAnalyticsSerializer(serializers.ModelSerializer):
 
 
 from django.contrib.auth import authenticate
+from django.db.models import Q
 from rest_framework import serializers
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
-from drf_spectacular.utils import extend_schema_field
 
 
 class UserLoginSerializer(TokenObtainPairSerializer):
-    username_field = "login"
+    username_field = "username_or_email"
 
-    login = serializers.CharField()
+    username_or_email = serializers.CharField()
     password = serializers.CharField(write_only=True)
 
     def validate(self, attrs):
-        login = attrs.get("login")
+        username_or_email = attrs.get("username_or_email")
         password = attrs.get("password")
 
         user = User.objects.filter(
-            Q(username__iexact=login) |
-            Q(email__iexact=login)
+            Q(username__iexact=username_or_email) |
+            Q(email__iexact=username_or_email)
         ).first()
 
         if not user:
@@ -432,7 +432,7 @@ class UserLoginSerializer(TokenObtainPairSerializer):
             })
 
         data = super().validate({
-            "username": authenticated_user.username,
+            "username_or_email": authenticated_user.username,
             "password": password
         })
 

@@ -226,27 +226,63 @@ Configured for deployment using:
 * Advanced analytics dashboard
 * Role-based access control (RBAC)
 
+
 ---
 
 # Screenshots
 
-Create a `screenshots/` folder and add:
+## Swagger API Documentation
 
-* Swagger Documentation
-* Docker Containers Running
-* Celery Worker Logs
-* API Response Examples
-
-Example:
-
-```text
-screenshots/
-├── swagger.png
-├── docker.png
-├── celery.png
-```
+![Swagger Home](docs/screenshots/swagger-home.png)
 
 ---
+
+## Authentication Endpoints
+
+![Authentication APIs](docs/screenshots/authentication-endpoint.png)
+
+![Authentication APIs](docs/screenshots/authentication-endpoint-2.png)
+
+![Authentication APIs](docs/screenshots/authentication-endpoint-3.png)
+
+---
+
+## Applications API Endpoints
+
+![Applications API](docs/screenshots/applications-api.png)
+
+![Applications API](docs/screenshots/applications-api-2.png)
+
+---
+
+## Reminder Management APIs
+
+![Reminder APIs](docs/screenshots/Reminders-api-screenshot.png)
+
+---
+
+## Full Swagger Overview
+
+![Swagger Overview](docs/screenshots/swagger-overview.png)
+
+![Swagger Overview](docs/screenshots/swagger-overview-2.png)
+
+![Swagger Overview](docs/screenshots/swagger-overview-3.png)
+
+![Swagger Overview](docs/screenshots/swagger-overview-4.png)
+
+
+## Terminal Overview
+
+![Terminal Overview](docs/screenshots/docker-overview.png)
+
+
+![Terminal Overview](docs/screenshots/celery-overview.png)
+
+
+
+---
+
 
 # License
 
