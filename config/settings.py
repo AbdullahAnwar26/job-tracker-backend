@@ -33,7 +33,7 @@ load_dotenv(BASE_DIR / ".env")
 
 SECRET_KEY = os.getenv('SECRET_KEY')
 
-DEBUG = os.getenv('DEBUG') == 'Fasle'
+DEBUG = os.getenv('DEBUG') == 'True'
 
 # Change this in production
 ALLOWED_HOSTS = [
