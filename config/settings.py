@@ -33,11 +33,14 @@ load_dotenv(BASE_DIR / ".env")
 
 SECRET_KEY = os.getenv('SECRET_KEY')
 
-DEBUG = os.getenv('DEBUG') == 'True'
+DEBUG = os.getenv('DEBUG') == 'Fasle'
 
 # Change this in production
-ALLOWED_HOSTS = ['*']
-
+ALLOWED_HOSTS = [
+    'job-tracker-api-c9tu.onrender.com',
+    'localhost',
+    '127.0.0.1',
+]
 
 # =========================================================
 # APPLICATIONS
@@ -188,6 +191,8 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 STATIC_ROOT = BASE_DIR / 'staticfiles'
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 MEDIA_URL = '/media/'
 
