@@ -24,5 +24,4 @@ EXPOSE 8000
 
 CMD python manage.py collectstatic --noinput && \
     python manage.py migrate && \
-    python manage.py spectacular --file schema.yml && \
-    gunicorn config.wsgi:application --bind 0.0.0.0:8000 --log-level debug
+    gunicorn config.wsgi:application --bind 0.0.0.0:8000
