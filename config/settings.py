@@ -226,9 +226,7 @@ REST_FRAMEWORK = {
     'PAGE_SIZE': 10,
 
     # Throttling
-    'DEFAULT_THROTTLE_CLASSES': [
-        'rest_framework.throttling.UserRateThrottle',
-    ],
+    'DEFAULT_THROTTLE_CLASSES': [ ],
 
     'DEFAULT_THROTTLE_RATES': {
 
