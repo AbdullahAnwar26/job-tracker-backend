@@ -305,7 +305,8 @@ CACHES = {
                 True,
 
             "CONNECTION_POOL_KWARGS": {
-                "max_connections": 50
+                "max_connections": 50,
+                "ssl_cert_reqs": None  # Disable SSL certificate verification
             },
         },
 
@@ -326,6 +327,7 @@ CACHES = {
 # =========================================================
 
 CELERY_BROKER_URL = os.getenv("REDIS_URL")
+CELERY_BROKER_TRANSPORT_OPTIONS = {"ssl_cert_reqs": None}  # required for Upstash TLS
 
 CELERY_ACCEPT_CONTENT = ['json']
 
